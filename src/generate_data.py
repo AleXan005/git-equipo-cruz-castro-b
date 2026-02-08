@@ -1,9 +1,9 @@
-cat > src/generate_data.py << 'EOF'
+#cat > src/generate_data.py << 'EOF'
 import csv
 import random
 from pathlib import Path
 
-def make_students_csv(path: Path, n: int = 20, seed: int = 7):
+def make_students_csv(path: Path, n: int = 25, seed: int = 7):
     random.seed(seed)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as f:
@@ -33,4 +33,4 @@ if __name__ == "__main__":
     make_students_csv(Path("data/students.csv"))
     make_sales_csv(Path("data/sales.csv"))
     print("Generated: data/students.csv, data/sales.csv")
-EOF
+#EOF
